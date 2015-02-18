@@ -31,7 +31,7 @@ module HyperScience
       request.add_field "Content-Type", "application/json"
       request.body = "{\"params\":{\"id\":\"#{id}\"}}"
       response = http_client.request(request)
-      JSON.parse( response.body )["result"][0]
+      JSON.parse( response.body )["result"][0]['value']
     end
 
     def refit
